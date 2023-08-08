@@ -10,6 +10,7 @@ public class Circle : MonoBehaviour
     #region Public Variables
     public CircleColor CircleColor;
     public Socket ConnectedSocket;
+    public Image CircleHalo;
     #endregion
 
     #region Private Variables
@@ -18,6 +19,12 @@ public class Circle : MonoBehaviour
     #endregion
 
     #region Unity Delegates
+
+    private void Awake()
+    {
+        Color myColor = GetComponent<Image>().color;
+        CircleHalo.color = new Color(myColor.r, myColor.g, myColor.b, CircleHalo.color.a);
+    }
     private void Update()
     {
         UpdateInput();
@@ -81,6 +88,7 @@ public class Circle : MonoBehaviour
         isDragging = true;
 
         //Should be done safer
+        CircleHalo.enabled = true;
         GameManager.Instance.DraggedCircle = this;
         GameManager.Instance.OverlappingCircle = null;
     }
@@ -89,6 +97,7 @@ public class Circle : MonoBehaviour
         isDragging = false;
         
         //Should be done safer
+        CircleHalo.enabled = false;
         GameManager.Instance.DraggedCircle = null;
         HandleOnDragUp();
     }
