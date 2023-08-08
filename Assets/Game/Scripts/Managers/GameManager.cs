@@ -8,19 +8,15 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     #region Public Variables
-    public AudioManager AudioManager;
-    public EffectsManager EffectsManager;
-    public UIManager UIManager;
-
     [Header("References")] 
-    public List<LevelManager> Levels;
+    public List<Level> Levels;
     public AnimationSettings ResetAnimationSettings;
     public GameObject LevelsParentObject;
 
     [Header("Global Variables")]
     public Circle DraggedCircle;
     public Circle OverlappingCircle;
-    public LevelManager CurrentLevelData;
+    public Level CurrentLevelData;
     #endregion
 
     #region Private Variables
@@ -34,7 +30,7 @@ public class GameManager : MonoBehaviour
         if(Instance == null)
             Instance = this;
 
-        UIManager.SetUIState(GameState.Playing);
+        UIManager.Instance.SetUIState(GameState.Playing);
         SwitchLevel(0);
     }
     #endregion
@@ -55,21 +51,21 @@ public class GameManager : MonoBehaviour
         circle.ConnectToNewSocket(newSocket, null);
         OverlappingCircle.ConnectToNewSocket(mySocket, CheckLevelDoneCondition);
         
-        AudioManager.PlaySwapSound();
+        AudioManager.Instance.PlaySwapSound();
     }
     public void CheckLevelDoneCondition()
     {
         if (CurrentLevelData.IsLevelComplete())
         {
             numberOfMoves = 0;
-            UIManager.SetUIState(GameState.EndGame);
+            UIManager.Instance.SetUIState(GameState.EndGame);
         }
         else
         {
             numberOfMoves++;
         }
         
-        UIManager.SetNumberOfMoves(numberOfMoves);
+        UIManager.Instance.SetNumberOfMoves(numberOfMoves);
     }
     public bool CanSwap(Circle circle)
     {
@@ -83,9 +79,9 @@ public class GameManager : MonoBehaviour
 
             Debug.LogWarning("Could be optimized");
 
-            foreach (var line in circle.ConnectedSocket.linesConnectedTo)
+            foreach (var line in circle.ConnectedSocket.LinesConnectedTo)
             {
-                foreach (var otherLine in OverlappingCircle.ConnectedSocket.linesConnectedTo)
+                foreach (var otherLine in OverlappingCircle.ConnectedSocket.LinesConnectedTo)
                 {
                     if (line == otherLine)
                         onTheSameLine = true;
@@ -106,7 +102,7 @@ public class GameManager : MonoBehaviour
             currentLevelIndex++;
         }
 
-        UIManager.SetUIState(GameState.Playing);
+        UIManager.Instance.SetUIState(GameState.Playing);
         SwitchLevel(currentLevelIndex);
     }
     #endregion

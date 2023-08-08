@@ -15,15 +15,9 @@ public class Circle : MonoBehaviour
     #region Private Variables
     private Vector3 touchLocation;
     private bool isDragging;
-    private CircleButton myButton;
     #endregion
 
     #region Unity Delegates
-
-    private void Awake()
-    {
-        myButton = GetComponent<CircleButton>();
-    }
     private void Update()
     {
         UpdateInput();
@@ -38,9 +32,7 @@ public class Circle : MonoBehaviour
     private void HandleCircleDragging()
     {
         if (isDragging)
-        {
             transform.position = Camera.main.ScreenToWorldPoint(touchLocation);
-        }
     }
     private void HandleOnDragUp()
     {
@@ -56,7 +48,7 @@ public class Circle : MonoBehaviour
     private void ResetCircleToSocket(Action onComplete)
     {
         LTDescr moveAnimator = this.gameObject.
-            LeanMove(ConnectedSocket.location, GameManager.Instance.ResetAnimationSettings.animationTime)
+            LeanMove(ConnectedSocket.Location, GameManager.Instance.ResetAnimationSettings.animationTime)
             .setEase(GameManager.Instance.ResetAnimationSettings.moveAnimation);
 
         if(onComplete != null)
@@ -77,7 +69,7 @@ public class Circle : MonoBehaviour
     public void ConnectToNewSocket(Socket newSocket, Action onComplete)
     {
         ConnectedSocket = newSocket;
-        ConnectedSocket.connectedCircle = this;
+        ConnectedSocket.ConnectedCircle = this;
 
         ResetCircleToSocket(onComplete);
     }
@@ -113,8 +105,6 @@ public class Circle : MonoBehaviour
     }
     #endregion
 }
-
-
 public enum CircleColor
 {
     Red, Green, Purple

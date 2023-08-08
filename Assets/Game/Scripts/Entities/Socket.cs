@@ -5,14 +5,14 @@ using UnityEngine;
 public class Socket : MonoBehaviour
 {
     #region Public Variables
-    public List<Line> linesConnectedTo;
-    public Circle connectedCircle;
-    public Vector3 location;
+    public List<Line> LinesConnectedTo;
+    public Circle ConnectedCircle;
+    public Vector3 Location;
     #endregion
 
 
     private void Awake()
     {
-        location = connectedCircle.transform.position;
+        Location = ConnectedCircle.transform.position;
     }
 }

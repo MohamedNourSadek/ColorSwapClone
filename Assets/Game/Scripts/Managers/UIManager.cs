@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-[System.Serializable]   
-public class UIManager
+public class UIManager : MonoBehaviour 
 {
+    public static UIManager Instance;
+
+    #region Public Variables
     public GameObject GameplayUI;
     public GameObject EndGameUI;
     public TextMeshProUGUI NumberOfMovesText;
+    #endregion
 
+    #region Unity Delegates
+    private void Awake()
+    {
+        Instance = this;
+    }
+    #endregion
+
+    #region Public Variables
     public void SetNumberOfMoves(int numberOfMoves)
     {
         NumberOfMovesText.text = numberOfMoves.ToString();
@@ -34,13 +45,14 @@ public class UIManager
             EndGameUI.LeanScaleY(1, animationSettings.animationTime / 2)
                 .setEase(animationSettings.moveAnimation);
 
-            GameManager.Instance.EffectsManager.PlayCelebrationEffect();
-            GameManager.Instance.AudioManager.PlayCeleberationSound();
+            EffectsManager.Instance.PlayCelebrationEffect();
+            AudioManager.Instance.PlayCeleberationSound();
         }
 
-        foreach (var levelOjbect in GameManager.Instance.LevelsParentObject.GetComponentsInChildren<LevelManager>())
+        foreach (var levelOjbect in GameManager.Instance.LevelsParentObject.GetComponentsInChildren<Level>())
         {
-            MonoBehaviour.Destroy(levelOjbect.gameObject);
+            Destroy(levelOjbect.gameObject);
         }
     }
+    #endregion
 }

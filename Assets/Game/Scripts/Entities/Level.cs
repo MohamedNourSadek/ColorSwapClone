@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class Level : MonoBehaviour
 {
     #region Public Variables
-    public LevelData levelData;
+    public LevelData LevelData;
     #endregion
 
     #region Unity Delegates
@@ -20,9 +20,9 @@ public class LevelManager : MonoBehaviour
     {
         bool levelIsDone = true;
 
-        foreach (Line line in levelData.lines)
+        foreach (Line line in LevelData.lines)
         {
-            if (line.LineSockets[0].connectedCircle.CircleColor == line.LineSockets[1].connectedCircle.CircleColor)
+            if (line.LineSockets[0].ConnectedCircle.CircleColor == line.LineSockets[1].ConnectedCircle.CircleColor)
             {
                 levelIsDone = false;
             }
