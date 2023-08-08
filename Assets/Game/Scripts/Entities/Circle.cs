@@ -13,7 +13,7 @@ public class Circle : MonoBehaviour
     #endregion
 
     #region Private Variables
-    private Vector3 TouchLocation;
+    private Vector3 touchLocation;
     private bool isDragging;
     private CircleButton myButton;
     #endregion
@@ -39,7 +39,7 @@ public class Circle : MonoBehaviour
     {
         if (isDragging)
         {
-            transform.position = Camera.main.ScreenToWorldPoint(TouchLocation);
+            transform.position = Camera.main.ScreenToWorldPoint(touchLocation);
         }
     }
     private void HandleOnDragUp()
@@ -65,11 +65,11 @@ public class Circle : MonoBehaviour
     private void UpdateInput()
     {
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
-        TouchLocation = Input.mousePosition;
+        touchLocation = Input.mousePosition;
 #else
-        TouchLocation = Input.GetTouch(0).position;
+        touchLocation = Input.GetTouch(0).position;
 #endif
-        TouchLocation.z = 1;
+        touchLocation.z = 1;
     }
     #endregion
 
