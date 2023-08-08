@@ -7,7 +7,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Circle))]
 public class CircleButton : Button
 {
-
     private Circle myCircle;
 
     #region Unity Delegates
@@ -19,10 +18,14 @@ public class CircleButton : Button
     #endregion
 
 
+    #region Unity Delegates
+    #endregion
+
     #region Callbacks
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
+
         targetGraphic.raycastTarget = false;
         myCircle.OnPointerDown(eventData);
     }
@@ -47,4 +50,12 @@ public class CircleButton : Button
     }
 
     #endregion
+}
+
+
+[System.Serializable]
+public class AnimationSettings
+{
+    public LeanTweenType moveAnimation = LeanTweenType.easeSpring;
+    public float animationTime = 0.5f;
 }

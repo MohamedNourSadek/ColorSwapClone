@@ -18,14 +18,14 @@ public class GameManager : MonoBehaviour
     [Header("Global Variables")]
     public Circle DraggedCircle;
     public Circle OverlappingCircle;
-    public LevelManager currentLevelData;
+    public LevelManager CurrentLevelData;
+    public AnimationSettings ResetAnimationSettings;
     #endregion
 
     #region Private Variables
     private int currentLevelIndex = 0;
     private int numberOfMoves = 0;
     #endregion
-
 
     #region Unity Delegates
     private void Awake()
@@ -63,31 +63,29 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-
     #region Public Functions
     public void SwapCircleWithOverlapping(Circle circle)
     {
         Socket mySocket = circle.ConnectedSocket;
         Socket newSocket = OverlappingCircle.ConnectedSocket;
 
-        circle.ConnectToNewSocket(newSocket);
-        OverlappingCircle.ConnectToNewSocket(mySocket);
-
-        CheckLevelDoneCondition();
+        circle.ConnectToNewSocket(newSocket, null);
+        OverlappingCircle.ConnectToNewSocket(mySocket, CheckLevelDoneCondition);
     }
 
     public void CheckLevelDoneCondition()
     {
-        if (currentLevelData.IsLevelComplete())
+        if (CurrentLevelData.IsLevelComplete())
         {
-            NumberOfMovesText.text = "0";
+            numberOfMoves = 0;
             SetUIState(GameState.EndGame);
         }
         else
         {
             numberOfMoves++;
-            NumberOfMovesText.text = numberOfMoves.ToString();
         }
+        
+        NumberOfMovesText.text = numberOfMoves.ToString();
     }
     public bool CanSwap(Circle circle)
     {

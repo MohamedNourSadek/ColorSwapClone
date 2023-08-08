@@ -38,7 +38,7 @@ RectTransform:
   - {fileID: 2206444671577831140}
   - {fileID: 2206444672832515825}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -74,6 +74,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2283403626412071162}
     m_Modifications:
     - target: {fileID: 1870979354072095921, guid: ee2260f71e59d144c8f3b22b5a723664, type: 3}
@@ -177,6 +178,9 @@ PrefabInstance:
       value: Line - Left
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee2260f71e59d144c8f3b22b5a723664, type: 3}
 --- !u!224 &2283403627445392513 stripped
 RectTransform:
@@ -199,6 +203,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2283403626412071162}
     m_Modifications:
     - target: {fileID: 85175029763083136, guid: 835e7d4311069264bb49d060b46c3a99, type: 3}
@@ -298,6 +303,9 @@ PrefabInstance:
       value: 'Color Circle '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 835e7d4311069264bb49d060b46c3a99, type: 3}
 --- !u!114 &2283403627034095326 stripped
 MonoBehaviour:
@@ -320,6 +328,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2283403626412071162}
     m_Modifications:
     - target: {fileID: 85175029763083136, guid: 835e7d4311069264bb49d060b46c3a99, type: 3}
@@ -427,6 +436,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 835e7d4311069264bb49d060b46c3a99, type: 3}
 --- !u!224 &2206444671577831140 stripped
 RectTransform:
@@ -449,6 +461,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2283403626412071162}
     m_Modifications:
     - target: {fileID: 1834804055675126760, guid: 4008bece95a0450409d276cc101a9ed3, type: 3}
@@ -560,6 +573,9 @@ PrefabInstance:
       value: 5.799999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4008bece95a0450409d276cc101a9ed3, type: 3}
 --- !u!114 &488305283480880720 stripped
 MonoBehaviour:
@@ -582,6 +598,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2283403626412071162}
     m_Modifications:
     - target: {fileID: 1870979354072095921, guid: ee2260f71e59d144c8f3b22b5a723664, type: 3}
@@ -685,6 +702,9 @@ PrefabInstance:
       value: Line - Bottom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee2260f71e59d144c8f3b22b5a723664, type: 3}
 --- !u!114 &452411991137924685 stripped
 MonoBehaviour:
@@ -707,6 +727,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2283403626412071162}
     m_Modifications:
     - target: {fileID: 1834804055675126760, guid: 4008bece95a0450409d276cc101a9ed3, type: 3}
@@ -814,6 +835,9 @@ PrefabInstance:
       value: 5.799999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4008bece95a0450409d276cc101a9ed3, type: 3}
 --- !u!114 &488305281903703212 stripped
 MonoBehaviour:
@@ -836,6 +860,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2283403626412071162}
     m_Modifications:
     - target: {fileID: 85175029763083136, guid: 835e7d4311069264bb49d060b46c3a99, type: 3}
@@ -943,6 +968,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 835e7d4311069264bb49d060b46c3a99, type: 3}
 --- !u!114 &2206444672832515824 stripped
 MonoBehaviour:
@@ -965,6 +993,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2283403626412071162}
     m_Modifications:
     - target: {fileID: 1834804055675126760, guid: 4008bece95a0450409d276cc101a9ed3, type: 3}
@@ -973,12 +1002,12 @@ PrefabInstance:
       objectReference: {fileID: 2206444672832515824}
     - target: {fileID: 1834804055675126760, guid: 4008bece95a0450409d276cc101a9ed3, type: 3}
       propertyPath: linesConnectedTo.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1834804055675126760, guid: 4008bece95a0450409d276cc101a9ed3, type: 3}
       propertyPath: linesConnectedTo.Array.data[0]
       value: 
-      objectReference: {fileID: 2283403627445392514}
+      objectReference: {fileID: 452411991137924685}
     - target: {fileID: 1834804055675126760, guid: 4008bece95a0450409d276cc101a9ed3, type: 3}
       propertyPath: linesConnectedTo.Array.data[1]
       value: 
@@ -1076,6 +1105,9 @@ PrefabInstance:
       value: 5.799999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4008bece95a0450409d276cc101a9ed3, type: 3}
 --- !u!224 &488305282042667929 stripped
 RectTransform:

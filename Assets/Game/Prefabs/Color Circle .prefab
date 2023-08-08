@@ -92,6 +92,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CircleColor: 0
   ConnectedSocket: {fileID: 0}
+  animationSettings:
+    offScale: {x: 1, y: 0, z: 0}
+    onScale: {x: 1, y: 1, z: 1}
+    InAnimationTime: 1
+    OutAnimationTime: 1
+    InAnimationCurve: 32
+    OutAnimationCurve: 32
+    pressedIncrementScale: {x: 0.1, y: 0.1, z: 0.1}
+    pressedAnimationTime: 0.1
+    pressedAnimationCurve: 32
 --- !u!114 &85175029763083149
 MonoBehaviour:
   m_ObjectHideFlags: 0

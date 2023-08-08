@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     #region Unity Delegates
     private void Awake()
     {
-        GameManager.Instance.currentLevelData = this;
+        GameManager.Instance.CurrentLevelData = this;
     }
     #endregion
 

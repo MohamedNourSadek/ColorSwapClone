@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,10 +15,15 @@ public class Circle : MonoBehaviour
     #region Private Variables
     private Vector3 TouchLocation;
     private bool isDragging;
+    private CircleButton myButton;
     #endregion
 
-
     #region Unity Delegates
+
+    private void Awake()
+    {
+        myButton = GetComponent<CircleButton>();
+    }
     private void Update()
     {
         UpdateInput();
@@ -27,7 +33,6 @@ public class Circle : MonoBehaviour
         HandleCircleDragging();
     }
     #endregion
-
 
     #region Private Functions
     private void HandleCircleDragging()
@@ -41,17 +46,21 @@ public class Circle : MonoBehaviour
     {
         if (GameManager.Instance.CanSwap(this) == false)
         {
-            ResetCircleToSocket();
+            ResetCircleToSocket(null);
         }
         else
         {
             GameManager.Instance.SwapCircleWithOverlapping(this);
         }
     }
-
-    private void ResetCircleToSocket()
+    private void ResetCircleToSocket(Action onComplete)
     {
-        this.transform.position = ConnectedSocket.location;
+        LTDescr moveAnimator = this.gameObject.
+            LeanMove(ConnectedSocket.location, GameManager.Instance.ResetAnimationSettings.animationTime)
+            .setEase(GameManager.Instance.ResetAnimationSettings.moveAnimation);
+
+        if(onComplete != null)
+            moveAnimator.setOnComplete(onComplete);
     }
     private void UpdateInput()
     {
@@ -65,11 +74,12 @@ public class Circle : MonoBehaviour
     #endregion
 
     #region Public Functions
-    public void ConnectToNewSocket(Socket newSocket)
+    public void ConnectToNewSocket(Socket newSocket, Action onComplete)
     {
         ConnectedSocket = newSocket;
         ConnectedSocket.connectedCircle = this;
-        this.transform.position = newSocket.location;
+
+        ResetCircleToSocket(onComplete);
     }
     #endregion
 
